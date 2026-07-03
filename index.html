@@ -1,29 +1,20 @@
-// index.ts
-// Punto de entrada de la Edge Function. Aquí sí se conecta la
-// verificación real del JWT usando supabase-js, y se sirve el router
-// de Hono. Sigue el mismo patrón de despliegue que tus otros
-// proyectos: router.ts + permisos.ts + datos.ts se despliegan juntos.
-
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import app from "./router.ts";
-
-const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
-const supabaseAnonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
-
-// Cliente liviano, solo para validar tokens de usuarios finales.
-// La escritura/lectura real de datos pasa por datos.ts con la
-// service role key, nunca por este cliente.
-const supabaseAuth = createClient(supabaseUrl, supabaseAnonKey);
-
-// router.ts expone verificarJwtYObtenerUserId como placeholder.
-// Aquí lo sobrescribimos con la implementación real antes de servir,
-// para no mezclar la dependencia de supabase-js dentro de router.ts.
-(globalThis as Record<string, unknown>).__verificarJwt = async (
-  token: string,
-): Promise<string | null> => {
-  const { data, error } = await supabaseAuth.auth.getUser(token);
-  if (error || !data.user) return null;
-  return data.user.id;
-};
-
-Deno.serve((req) => app.fetch(req));
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/orientacion-oyp/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orientación y Psicología · Distrito 09-05</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/orientacion-oyp/assets/index-A_3c03np.js"></script>
+    <link rel="stylesheet" crossorigin href="/orientacion-oyp/assets/index-Dj6CVBar.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

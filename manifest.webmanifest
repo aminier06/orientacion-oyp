@@ -1,1 +1,20 @@
-{"name":"Orientación y Psicología — Distrito 09-05","short_name":"OyP 09-05","description":"Plataforma de la Unidad de Orientación y Psicología, Distrito Educativo 09-05","start_url":"/orientacion-oyp/","display":"standalone","background_color":"#efede6","theme_color":"#2f5d50","lang":"en","scope":"/orientacion-oyp/","icons":[{"src":"logo0905.png","sizes":"512x512","type":"image/png"}]}
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/orientacion-oyp/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orientación y Psicología · Distrito 09-05</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/orientacion-oyp/assets/index-N-h83HsL.js"></script>
+    <link rel="stylesheet" crossorigin href="/orientacion-oyp/assets/index-CBCu1Sg8.css">
+  <link rel="manifest" href="/orientacion-oyp/manifest.webmanifest"></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
